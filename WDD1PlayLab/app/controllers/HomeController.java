@@ -16,8 +16,19 @@ public class HomeController extends Controller {
      * this method will be called when the application receives a
      * <code>GET</code> request with a path of <code>/</code>.
      */
-    public Result index() 
-        ok(index.render());
+    public Result index() {
+        return ok(index.render("Home"));
     }
+    public Result onsale(){
+        return ok(onsale.render());
 
+    }
+    public Result about(){
+        return ok(about.render());
+    }
+   
 }
+
+
+
+
