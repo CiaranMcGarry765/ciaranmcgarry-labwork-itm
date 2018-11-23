@@ -19,9 +19,9 @@ public class HomeController extends Controller {
     public Result index() {
         return ok(index.render("Home"));
     }
-    public Result onsale(){
-        return ok(onsale.render());
-
+    public Result Onsale(){
+        return ok(Onsale.render());
+    
     }
     public Result about(){
         return ok(about.render());
