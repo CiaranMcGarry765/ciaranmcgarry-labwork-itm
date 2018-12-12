@@ -1,5 +1,12 @@
 package models;
 
+import java.util.*;
+import javax.persistence.*;
+import io.ebean.*;
+import play.data.format.*;
+import play.data.validation.*;
+
+@Entity
 public class ItemOnSale extends Model {
 
     // Properties
@@ -35,8 +42,8 @@ public class ItemOnSale extends Model {
     public void setName(String name) {
         this.name = name;
     }
-    public void getdescription() {
-       return name;
+    public String getdescription() {
+       return description;
     }
     public void setdescription(String name) {
         this.name = name;
@@ -44,13 +51,14 @@ public class ItemOnSale extends Model {
     public void setstock(String name) {
         this.name = name;
     }
-    public void getstock() {
-        return name;
+    public int getstock() {
+        return stock;
     }
     public void setprice(String name) {
         this.name = name;
     }
-    public void getprice(String name) {
-        return name;
+    public double getprice(String name) {
+        return price;
     }
+}
     
