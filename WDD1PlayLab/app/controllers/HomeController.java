@@ -26,6 +26,23 @@ public class HomeController extends Controller {
         return ok(about.render());
     }
    
+    import play.api.Environment;
+    import play.data.*;
+    import play.db.ebean.Transactional;
+    
+    import java.util.ArrayList;
+    import java.util.List;
+    import javax.inject.Inject;
+    
+    import models.*;
+    
+    public Result onsale() {
+        List<ItemOnSale> itemList = ItemOnSale.findAll();
+        List<Category> categoryList = Category.findAll();
+        return ok(onsale.render(itemList, categoryList));
+     }
+
+
 }
 
 

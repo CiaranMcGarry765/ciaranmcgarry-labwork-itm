@@ -1,18 +1,33 @@
+@(items: List[models.ItemOnSale]),categories: List[models.Category])
 @main("On Sale"){
 	<h1>On sale here</h1>
-	<h4>Note that all products are second hand, unless otherwise stated.</h4>
-	<table class="table table-bordered table-hover table-condensed">
+	<div class="col-sm-3"></div>
+		<h4>categories.</h4>
+		<ul class="list group">
+			@for(c<-categories){
+				<li class="list-group-item catheight">@c.getName
+					<span class="badge">@cgetItems.size</span>
+				</li>
+			}
+		</ul>
+		
+		<div class="col-sm-9"
+		<h4>note all Products are second hand</div>h4></div>
+				<table class="table table-bordered table-hover table-condensed">
 		<thead>
 		<!-- The header row-->
 		<tr>
 			<th>ID</th>
 			<th>Name</th>
+			<th>Category</th>
 			<th>Description</th>
 			<th>Stock</th>
 			<th>Price</th>
 		</tr>
 		</thead>
 		<tbody>
+			@*loop for creating table rows from ItemOnSale data*@
+			@for(i<-items){
 		<!-- Product row(s) -->
 		<tr>
 			<td>1</td>
@@ -31,4 +46,10 @@
 		</tr>
 		</tbody>
 	</table>
- }
+	
+	public Result onsale() {
+		List<ItemOnSale> itemList = ItemOnSale.findAll();
+		return ok(onsale.render(itemList));
+	 }
+	}
+}

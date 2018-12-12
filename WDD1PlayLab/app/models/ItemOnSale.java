@@ -1,3 +1,6 @@
+@ManyToOne
+private Category category;
+
 package models;
 
 import java.util.*;
@@ -60,5 +63,24 @@ public class ItemOnSale extends Model {
     public double getprice(String name) {
         return price;
     }
+
+    public static final Finder<Long, ItemOnSale> find = new Finder<>(ItemOnSale.class);
+			    
+    public static final List<ItemOnSale> findAll() {
+       return ItemOnSale.find.all();
+    }
+
+    <tbody>
+   @* Loop for creating table rows from ItemOnSale data *@
+   @for(i<-items) {
+      <tr>
+         <td>@i.getId</td>
+         <td>@i.getName</td>
+         <td>@i.getDescription</td>
+         <td>@i.getStock</td>
+         <td>&euro; @("%.2f".format(i.getPrice))</td>
+      </tr>
+   }
+</tbody>
 }
     

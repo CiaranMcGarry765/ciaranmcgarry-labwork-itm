@@ -1,0 +1,6 @@
+2018-12-12 12:22:54 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "PLAY_EVOLUTIONS" not found; SQL statement:
+select id, hash, apply_script, revert_script, state, last_problem from play_evolutions where state like 'applying_%' [42102-197]
+2018-12-12 12:40:12 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Table "CATEGORY" not found; SQL statement:
+insert into category (id,name) values ( 1,'Electrical and Electronics' ) [42102-197]
